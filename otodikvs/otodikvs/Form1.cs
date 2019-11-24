@@ -1,4 +1,5 @@
-﻿using System;
+﻿using otodikvs.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,23 @@ namespace otodikvs
 {
     public partial class Form1 : Form
     {
+        BindingList<User> users = new BindingList<User>();
         public Form1()
         {
             InitializeComponent();
+            listUsers.DataSource = users;
+            listUsers.ValueMember = "ID";
+            listUsers.DisplayMember = "FullName";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var u = new User()
+            {
+                LastName = txtLastName.Text,
+                FirstName = txtFirstName.Text
+            };
+            users.Add(u);
         }
     }
 }
