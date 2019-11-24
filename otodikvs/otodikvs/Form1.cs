@@ -48,5 +48,19 @@ namespace otodikvs
                 }
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (var n in users)
+            {
+               
+                //if (n.FullName==listUsers.SelectedItem)
+                //{
+                //    users.Remove(n);
+                //}
+                
+            }
+         
+        }
     }
 }
